@@ -20,3 +20,6 @@ local.rm: rs_uninstall
 
 local.status: 
 	cat -b $(RS_INSTALL_LOCATION)/recsync.log
+
+local.restart: local.stop local.rm local.conf local.install local.run
+

@@ -1,11 +1,14 @@
 #
 #
 ### Where the Source repository SRC1_URL/SRC1_NAME
+# https://github.com/ChannelFinder/recsync
 CF_SRC_URL:=https://github.com/ChannelFinder
 RS_SRC_NAME:=recsync
 ### Which the source tag / branch / hash id would like to use
 # 2022-05-17
-RS_SRC_TAG:=32a49d1
+#RS_SRC_TAG:=32a49d1
+# 2025-06-11
+RS_SRC_TAG=7a627d1
 ### Placeholder for the site-specific version control 
 RS_SRC_VERSION:=$(RS_SRC_TAG)
 #
@@ -15,7 +18,9 @@ PY_CF_SRC_URL:=$(CF_SRC_URL)
 PY_CF_SRC_NAME:=pyCFClient
 ### Which the source tag / branch / hash id would like to use
 # 2019-03-04
-PY_CF_SRC_TAG:=9689d5b
+#PY_CF_SRC_TAG:=9689d5b
+# 2026-06-11
+PY_CF_SRC_TAG=2d601bb
 ### Placeholder for the site-specific version control 
 PY_CF_SRC_VERSION:=$(PY_CF_SRC_TAG)
 #

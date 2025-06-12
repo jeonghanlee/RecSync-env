@@ -1,6 +1,6 @@
 
 
-rs_RULES_NAMES:=p3mac p3deb
+rs_RULES_NAMES:=mac deb
 install_rs_RULES:=$(addprefix install., $(es_RULES_NAMES))
 setup_rs_RULES:=$(addprefix setup., $(es_RULES_NAMES))
 remove_rs_RULES:=$(addprefix remove., $(es_RULES_NAMES))
@@ -11,27 +11,26 @@ show_rs_RULES:=$(addprefix show., $(es_RULES_NAMES))
 #https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-8.2.0.html
 
 
-# Debian 11
+# Debian 12
 
-setup.p3deb: install.p3deb
+setup.deb: install.deb
 
-setup.p3mac: install.p3mac
+setup.mac: install.mac
 
 
 # macOS aarch64
 install.p3mac:
-	$(QUIET) brew install python@3.10 
+	$(QUIET) brew install python@3.10
 	$(QUIET) /opt/homebrew/bin/pip3 install twisted simplejson urllib3 requests
 
-show.p3mac:
-	$(QUIET) brew info python@3.10 
+show.mac:
+	$(QUIET) brew info python@3.10
 
 
-install.p3deb:
-	$(QUIET) sudo apt install -y python3 
-	$(QUIET) sudo pip3 install twisted simplejson urllib3 requests
+install.deb:
+	$(QUIET) sudo apt install -y python3-twisted  python3-simplejson  python3-urllib3 python3-requests
 
-show.p3deb:
-	$(QUIET) apt info python3 
+show.deb:
+	$(QUIET) apt info python3
 
 
